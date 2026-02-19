@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import "./ImageSlider.css";
 
 // ✅ IMPORT IMAGES FROM src/images
-import slider1 from "../src/images/Slider1.jpg";
-import slider2 from "../src/images/Slider2.jpg";
-import slider3 from "../src/images/Slider3.jpg";
+import slider1 from "../src/images/slider1.jpg";
+import slider2 from "../src/images/slider2.jpg";
+import slider3 from "../src/images/slider3.jpg";
 import overlayImg from "../src/images/overlay.png";
 
 const images = [slider1, slider2, slider3];
