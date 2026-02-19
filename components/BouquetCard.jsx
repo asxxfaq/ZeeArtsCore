@@ -27,8 +27,13 @@ function BouquetCard({ bouquet }) {
 
   return (
     <div className="card">
+      {/* 🖼️ Image */}
       <div className="image-container">
-        <img src={bouquet.image} alt={bouquet.name} />
+        <img
+          src={bouquet.image}
+          alt={bouquet.name}
+          loading="lazy"
+        />
 
         {/* ❤️ Favourite */}
         <button className="fav-btn" onClick={handleFav}>
@@ -45,6 +50,7 @@ function BouquetCard({ bouquet }) {
         </button>
       </div>
 
+      {/* 📄 Content */}
       <div className="card-content">
         <h3>{bouquet.name}</h3>
         <p className="price">{bouquet.price}</p>
@@ -58,14 +64,26 @@ function BouquetCard({ bouquet }) {
 
       {/* 🌸 Full Image Overlay */}
       {showImage && (
-        <div className="image-overlay" onClick={() => setShowImage(false)}>
-          <button
-            className="close-image"
-            onClick={() => setShowImage(false)}
+        <div
+          className="image-overlay"
+          onClick={() => setShowImage(false)}
+        >
+          <div
+            className="overlay-content"
+            onClick={(e) => e.stopPropagation()}
           >
-            ❌
-          </button>
-          <img src={bouquet.image} alt={bouquet.name} />
+            <button
+              className="close-image"
+              onClick={() => setShowImage(false)}
+            >
+              ❌
+            </button>
+
+            <img
+              src={bouquet.image}
+              alt={bouquet.name}
+            />
+          </div>
         </div>
       )}
     </div>

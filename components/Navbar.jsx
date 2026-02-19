@@ -4,6 +4,7 @@ import { LuMenu, LuX, LuShoppingCart, LuHeart } from "react-icons/lu";
 import { GrGallery } from "react-icons/gr";
 import { FaHome, FaWhatsapp } from "react-icons/fa";
 import { useStore } from "../context/StoreContext";
+import logo from "../src/images/logo.jpg";   // ✅ IMPORT IMAGE
 import "./Navbar.css";
 
 function Navbar() {
@@ -15,7 +16,11 @@ function Navbar() {
 
       {/* BRAND */}
       <div className="nav-brand">
-        <img src="/images/logo.jpg" alt="ZeeArtsCore Logo" />
+        <img
+          src={logo}
+          alt="ZeeArtsCore Logo"
+          className="logo"
+        />
         <div>
           <h2>ZeeArtsCore</h2>
           <small>Bouquet Birthday Gifts</small>

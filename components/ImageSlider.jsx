@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import "./ImageSlider.css";
 
-const images = [
-  "/images/Slider1.jpg", 
-  "/images/Slider2.jpg",
-  "/images/Slider3.jpg"
-];
+// ✅ IMPORT IMAGES FROM src/images
+import slider1 from "../src/images/Slider1.jpg";
+import slider2 from "../src/images/Slider2.jpg";
+import slider3 from "../src/images/Slider3.jpg";
+import overlayImg from "../src/images/overlay.png";
+
+const images = [slider1, slider2, slider3];
 
 function ImageSlider() {
   const [current, setCurrent] = useState(0);
@@ -18,19 +20,21 @@ function ImageSlider() {
     return () => clearInterval(interval);
   }, []);
 
- 
   if (!images.length) return null;
 
   return (
     <div className="slider">
-      <img 
-        key={current} 
-        src={images[current]} 
-        alt={`Bouquet Slide ${current + 1}`} 
-        className="fade-in" 
+      <img
+        key={current}
+        src={images[current]}
+        alt={`Bouquet Slide ${current + 1}`}
+        className="fade-in"
       />
+
       <div className="overlay">
-        <h2><img src="/images/overlay.png" alt="ZeeArtsCore" /></h2>
+        <h2>
+          <img src={overlayImg} alt="ZeeArtsCore" />
+        </h2>
         <p>Beautiful Birthday Bouquet Gifts</p>
       </div>
     </div>
