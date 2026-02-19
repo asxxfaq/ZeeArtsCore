@@ -5,22 +5,22 @@ function Cart() {
   const { cart, removeFromCart } = useStore();
 
   const totalPrice = cart.reduce((sum, item) => {
-    const priceNumber = Number(
-      item.price.replace(/[^0-9]/g, "")
-    );
+    const priceNumber = Number(item.price.replace(/[^0-9]/g, ""));
     return sum + priceNumber;
   }, 0);
 
-  const whatsappMessage = encodeURIComponent(
-    `Hello, I want to place an order:\n\n` +
-      cart
-        .map(
-          (item, index) =>
-            `${index + 1}. ${item.name} - ${item.price}`
-        )
-        .join("\n") +
-      `\n\nTotal: ₹${totalPrice}`
-  );
+  // 🔹 Enquiry text (will be copied)
+  const enquiryText =
+    `Hello, I would like to enquire about these products:\n\n` +
+    cart
+      .map((item, index) => `${index + 1}. ${item.name} - ${item.price}`)
+      .join("\n") +
+    `\n\nTotal: ₹${totalPrice}`;
+
+  const handleInstagramRedirect = () => {
+    navigator.clipboard.writeText(enquiryText);
+    window.open("https://ig.me/m/craftt_holicc", "_blank");
+  };
 
   return (
     <div className="cart-page">
@@ -55,14 +55,13 @@ function Cart() {
           <div className="cart-summary">
             <h3>Total: ₹{totalPrice}</h3>
 
-            <a
-              className="btn-order"
-              href={`https://wa.me/91XXXXXXXXXX?text=${whatsappMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Proceed to Order 💬
-            </a>
+            <button className="btn-order" onClick={handleInstagramRedirect}>
+              Enquire on Instagram 📩
+            </button>
+
+            <p className="note">
+              (Selected products are copied. Just paste in Instagram chat)
+            </p>
           </div>
         </>
       )}
