@@ -1,0 +1,192 @@
+/* ===============================
+   ❤️ FAVOURITES PAGE
+================================ */
+.favourites-page {
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .favourites-page h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Empty State */
+  .empty {
+    text-align: center;
+    color: #777;
+    font-size: 1.1rem;
+  }
+  
+  /* ===============================
+     📦 GRID
+  ================================ */
+  .fav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+  }
+  
+  /* ===============================
+     🧾 CARD
+  ================================ */
+  .fav-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .fav-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* ===============================
+     🖼️ IMAGE
+  ================================ */
+  .fav-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #f4f4f4;
+  }
+  
+  .fav-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .fav-card:hover .fav-image img {
+    transform: scale(1.05);
+  }
+  
+  /* ===============================
+     ℹ️ INFO
+  ================================ */
+  .fav-info {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .fav-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .price {
+    color: #ff4d6d;
+    font-weight: bold;
+    margin: 8px 0;
+    font-size: 1.05rem;
+  }
+  
+  /* ===============================
+     🔘 ACTIONS
+  ================================ */
+  .fav-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  
+  /* Add to Cart */
+  .btn-cart {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  
+  .btn-cart:hover {
+    background: #e63b59;
+    transform: scale(1.05);
+  }
+  
+  .btn-cart:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Remove */
+  .btn-remove {
+    background: #eee;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+  }
+  
+  .btn-remove:hover {
+    background: #ddd;
+  }
+  
+  /* ===============================
+     📱 MOBILE DEVICES
+  ================================ */
+  @media (max-width: 480px) {
+    .favourites-page {
+      padding: 15px;
+    }
+  
+    .fav-image {
+      height: 180px;
+    }
+  
+    .fav-info h3 {
+      font-size: 1rem;
+    }
+  
+    .price {
+      font-size: 1rem;
+    }
+  
+    .btn-cart,
+    .btn-remove {
+      padding: 8px 14px;
+      font-size: 0.85rem;
+    }
+  }
+  
+  /* ===============================
+     📱 TABLETS
+  ================================ */
+  @media (max-width: 768px) {
+    .fav-image {
+      height: 200px;
+    }
+  }
+  
+  /* ===============================
+     🖥️ LARGE SCREENS
+  ================================ */
+  @media (min-width: 1200px) {
+    .fav-image {
+      height: 250px;
+    }
+  
+    .fav-info h3 {
+      font-size: 1.2rem;
+    }
+  
+    .price {
+      font-size: 1.15rem;
+    }
+  }
+  

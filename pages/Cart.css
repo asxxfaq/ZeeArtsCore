@@ -1,0 +1,188 @@
+/* ===============================
+   🛒 CART PAGE
+================================ */
+.cart-page {
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.cart-page h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Empty cart */
+.empty {
+  text-align: center;
+  color: #777;
+  font-size: 1.1rem;
+}
+
+/* ===============================
+   📦 CART GRID
+================================ */
+.cart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+/* ===============================
+   🧾 CART CARD
+================================ */
+.cart-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cart-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* ===============================
+   🖼️ IMAGE
+================================ */
+.cart-image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+.cart-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===============================
+   ℹ️ INFO
+================================ */
+.cart-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.cart-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.price {
+  color: #ff4d6d;
+  font-weight: bold;
+  margin: 8px 0;
+  font-size: 1.05rem;
+}
+
+/* ===============================
+   ❌ REMOVE BUTTON
+================================ */
+.btn-remove {
+  background: #eee;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.btn-remove:hover {
+  background: #ddd;
+}
+
+/* ===============================
+   📊 SUMMARY
+================================ */
+.cart-summary {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.cart-summary h3 {
+  margin-bottom: 15px;
+}
+
+/* ===============================
+   📲 ORDER BUTTON
+================================ */
+.btn-order {
+  background: #25d366;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-order:hover {
+  background: #128c7e;
+  transform: scale(1.05);
+}
+
+/* ===============================
+   📱 MOBILE DEVICES
+================================ */
+@media (max-width: 480px) {
+  .cart-page {
+    padding: 15px;
+  }
+
+  .cart-image {
+    height: 180px;
+  }
+
+  .cart-info h3 {
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .btn-remove {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+
+  .btn-order {
+    width: 100%;
+    padding: 14px;
+  }
+}
+
+/* ===============================
+   📱 TABLETS
+================================ */
+@media (max-width: 768px) {
+  .cart-image {
+    height: 200px;
+  }
+}
+
+/* ===============================
+   🖥️ LARGE SCREENS
+================================ */
+@media (min-width: 1200px) {
+  .cart-image {
+    height: 250px;
+  }
+
+  .cart-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .price {
+    font-size: 1.15rem;
+  }
+}
