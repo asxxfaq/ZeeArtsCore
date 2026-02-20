@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { FaHome, FaInstagram } from "react-icons/fa";
 import { LuMenu, LuX, LuShoppingCart, LuHeart } from "react-icons/lu";
 import { GrGallery } from "react-icons/gr";
-import { FaHome, FaWhatsapp } from "react-icons/fa";
 import { useStore } from "../context/StoreContext";
 import logo from "../src/images/logo.jpg";   // ✅ IMPORT IMAGE
 import "./Navbar.css";
@@ -75,12 +75,13 @@ function Navbar() {
 
         {/* WHATSAPP */}
         <a
-          href="https://wa.me/91XXXXXXXXXX"
+          href="https://ig.me/m/zeeartscore"
           target="_blank"
           rel="noreferrer"
-          className="whatsapp-btn"
+          className="instagram-btn"
         >
-          <FaWhatsapp /> Order Now
+          <FaInstagram size={24} />
+          <span>Order Now</span> {/* Optional text, you can remove the span if you only want the icon */}
         </a>
       </div>
     </nav>

@@ -19,7 +19,7 @@ function Cart() {
 
   const handleInstagramRedirect = () => {
     navigator.clipboard.writeText(enquiryText);
-    window.open("https://ig.me/m/craftt_holicc", "_blank");
+    window.open("https://ig.me/m/zeeartscore", "_blank");
   };
 
   return (

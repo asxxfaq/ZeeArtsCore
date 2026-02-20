@@ -116,22 +116,28 @@
 /* =========================
    WHATSAPP BUTTON
 ========================= */
-.whatsapp-btn {
-  background-color: #25d366;
+/* =========================
+   INSTAGRAM BUTTON
+========================= */
+.instagram-btn {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   color: white;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  transition: transform 0.2s, background-color 0.2s;
+  transition: transform 0.2s, filter 0.2s;
+  border: none;
+  cursor: pointer;
 }
 
-.whatsapp-btn:hover {
-  background-color: #128c7e;
+.instagram-btn:hover {
   transform: scale(1.05);
+  filter: brightness(1.1); /* Makes the gradient slightly brighter on hover */
 }
 
 /* =========================
