@@ -9,15 +9,12 @@ function Home() {
       {/* 🎠 IMAGE SLIDER */}
       <ImageSlider />
 
-      {/* 🌸 HERO */}
-     
-
       {/* 🌼 FEATURED PRODUCTS */}
       <section className="featured">
         <h2>✨ Featured Bouquets</h2>
 
         {/* ONLY 4 PRODUCTS */}
-        <Gallery limit={3} />
+        <Gallery limit={3} hideHeader={true} />
 
         {/* VIEW ALL BUTTON */}
         <div className="view-all">
@@ -26,13 +23,15 @@ function Home() {
           </Link>
         </div>
       </section>
- <section className="hero">
+
+      <section className="hero">
         <h1>ZeeArtsCore 💐</h1>
         <p>
           Handmade Birthday Bouquet Gifts <br />
           Crafted with Love & Care
         </p>
       </section>
+
       {/* ✨ HIGHLIGHTS */}
       <section className="highlights">
         <div>💐 Fresh Designs</div>

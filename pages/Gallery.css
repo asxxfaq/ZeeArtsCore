@@ -3,7 +3,7 @@
 ================================ */
 .gallery-section {
   padding: 60px 5%;
-  background-color: #fff;
+  background-color: var(--bg-cream);
 }
 
 /* ===============================
@@ -11,25 +11,28 @@
 ================================ */
 .gallery-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .gallery-icon {
   font-size: 2.5rem;
-  color: #ff4d6d;
+  color: var(--secondary-gold);
   margin-bottom: 10px;
 }
 
 .gallery-header h2 {
-  font-size: 2rem;
-  color: #333;
+  font-size: 2.5rem;
+  color: var(--primary-maroon);
   margin: 0;
+  letter-spacing: 1px;
 }
 
 .gallery-header p {
-  color: #777;
+  color: #666;
   font-style: italic;
-  margin-top: 6px;
+  margin-top: 10px;
+  font-family: var(--body-font);
+  font-weight: 300;
 }
 
 /* ===============================
@@ -37,8 +40,8 @@
 ================================ */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 /* ===============================
@@ -47,10 +50,11 @@
 .gallery-item {
   position: relative;
   overflow: hidden;
-  border-radius: 15px;
-  background: #f4f4f4;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  background: #fff;
+  transition: all 0.4s ease;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(197, 160, 89, 0.2);
 }
 
 .gallery-item img {
@@ -58,43 +62,22 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.6s ease;
 }
 
 .gallery-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border-color: var(--secondary-gold);
 }
 
 .gallery-item:hover img {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 /* ===============================
-   🎨 HOVER OVERLAY
+    Receipt / Hover (Removed)
 ================================ */
-.hover-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 77, 109, 0.25);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  color: white;
-  pointer-events: none;
-}
-
-.gallery-item:hover .hover-overlay {
-  opacity: 1;
-}
-
-.view-icon {
-  font-size: 2rem;
-  margin-bottom: 8px;
-}
 
 /* ===============================
    📱 MOBILE
@@ -105,7 +88,7 @@
   }
 
   .gallery-header h2 {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 
   .gallery-icon {
@@ -114,7 +97,7 @@
 
   .gallery-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 20px;
   }
 }
 
@@ -123,11 +106,11 @@
 ================================ */
 @media (max-width: 768px) {
   .gallery-header h2 {
-    font-size: 1.8rem;
+    font-size: 2.22rem;
   }
 
   .gallery-grid {
-    gap: 20px;
+    gap: 25px;
   }
 }
 
@@ -136,10 +119,10 @@
 ================================ */
 @media (min-width: 1200px) {
   .gallery-header h2 {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
   }
 
   .gallery-grid {
-    gap: 30px;
+    gap: 40px;
   }
 }

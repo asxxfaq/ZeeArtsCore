@@ -2,191 +2,212 @@
    ❤️ FAVOURITES PAGE
 ================================ */
 .favourites-page {
-    padding: 30px;
-    max-width: 1200px;
-    margin: auto;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+  min-height: 80vh;
+}
+
+.favourites-page h2 {
+  margin-bottom: 40px;
+  text-align: center;
+  color: var(--primary-maroon);
+  font-size: 2.5rem;
+}
+
+/* Empty State */
+.empty {
+  text-align: center;
+  color: #666;
+  font-size: 1.2rem;
+  padding: 100px 20px;
+  font-style: italic;
+}
+
+/* ===============================
+   📦 GRID
+================================ */
+.fav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* ===============================
+   🧾 CARD
+================================ */
+.fav-card {
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+.fav-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  border-color: var(--secondary-gold);
+}
+
+/* ===============================
+   🖼️ IMAGE
+================================ */
+.fav-image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #fdfdfd;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+}
+
+.fav-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.fav-card:hover .fav-image img {
+  transform: scale(1.1);
+}
+
+/* ===============================
+   ℹ️ INFO
+================================ */
+.fav-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.fav-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--primary-maroon);
+  font-family: var(--heading-font);
+}
+
+.price {
+  color: var(--secondary-gold);
+  font-weight: 600;
+  margin: 10px 0 18px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+/* ===============================
+   🔘 ACTIONS
+================================ */
+.fav-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+/* Add to Cart */
+.btn-cart {
+  background: var(--primary-maroon);
+  color: var(--secondary-gold);
+  border: 1px solid var(--secondary-gold);
+  padding: 12px 24px;
+  border-radius: 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-cart:hover {
+  background: var(--secondary-gold);
+  color: var(--primary-maroon);
+}
+
+.btn-cart:disabled {
+  background: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+  color: #666;
+}
+
+/* Remove */
+.btn-remove {
+  background: transparent;
+  color: #888;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.btn-remove:hover {
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* ===============================
+   📱 MOBILE DEVICES
+================================ */
+@media (max-width: 480px) {
+  .favourites-page {
+    padding: 20px 15px;
   }
-  
+
   .favourites-page h2 {
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: 2rem;
   }
-  
-  /* Empty State */
-  .empty {
-    text-align: center;
-    color: #777;
-    font-size: 1.1rem;
-  }
-  
-  /* ===============================
-     📦 GRID
-  ================================ */
-  .fav-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
-  }
-  
-  /* ===============================
-     🧾 CARD
-  ================================ */
-  .fav-card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .fav-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-  }
-  
-  /* ===============================
-     🖼️ IMAGE
-  ================================ */
+
   .fav-image {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    background: #f4f4f4;
+    height: 200px;
   }
-  
-  .fav-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-  
-  .fav-card:hover .fav-image img {
-    transform: scale(1.05);
-  }
-  
-  /* ===============================
-     ℹ️ INFO
-  ================================ */
-  .fav-info {
-    padding: 15px;
-    text-align: center;
-  }
-  
+
   .fav-info h3 {
-    margin: 0;
     font-size: 1.1rem;
-    color: #333;
   }
-  
+
   .price {
-    color: #ff4d6d;
-    font-weight: bold;
-    margin: 8px 0;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
-  
-  /* ===============================
-     🔘 ACTIONS
-  ================================ */
-  .fav-actions {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 12px;
-    flex-wrap: wrap;
-  }
-  
-  /* Add to Cart */
-  .btn-cart {
-    background: #ff4d6d;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 0.9rem;
-    transition: background 0.2s ease, transform 0.2s ease;
-  }
-  
-  .btn-cart:hover {
-    background: #e63b59;
-    transform: scale(1.05);
-  }
-  
-  .btn-cart:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-    transform: none;
-  }
-  
-  /* Remove */
+
+  .btn-cart,
   .btn-remove {
-    background: #eee;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background 0.2s ease;
+    padding: 12px;
+    width: 100%;
+    font-size: 0.85rem;
   }
-  
-  .btn-remove:hover {
-    background: #ddd;
+}
+
+/* ===============================
+   📱 TABLETS
+================================ */
+@media (max-width: 768px) {
+  .fav-image {
+    height: 220px;
   }
-  
-  /* ===============================
-     📱 MOBILE DEVICES
-  ================================ */
-  @media (max-width: 480px) {
-    .favourites-page {
-      padding: 15px;
-    }
-  
-    .fav-image {
-      height: 180px;
-    }
-  
-    .fav-info h3 {
-      font-size: 1rem;
-    }
-  
-    .price {
-      font-size: 1rem;
-    }
-  
-    .btn-cart,
-    .btn-remove {
-      padding: 8px 14px;
-      font-size: 0.85rem;
-    }
+}
+
+/* ===============================
+   🖥️ LARGE SCREENS
+================================ */
+@media (min-width: 1200px) {
+  .fav-image {
+    height: 280px;
   }
-  
-  /* ===============================
-     📱 TABLETS
-  ================================ */
-  @media (max-width: 768px) {
-    .fav-image {
-      height: 200px;
-    }
+
+  .fav-info h3 {
+    font-size: 1.3rem;
   }
-  
-  /* ===============================
-     🖥️ LARGE SCREENS
-  ================================ */
-  @media (min-width: 1200px) {
-    .fav-image {
-      height: 250px;
-    }
-  
-    .fav-info h3 {
-      font-size: 1.2rem;
-    }
-  
-    .price {
-      font-size: 1.15rem;
-    }
+
+  .price {
+    font-size: 1.25rem;
   }
+}
   

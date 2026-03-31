@@ -2,7 +2,7 @@
    🏠 HOME WRAPPER
 ================================ */
 .home {
-  background: #fff7f9;
+  background: var(--bg-cream);
   width: 100%;
   overflow-x: hidden;
 }
@@ -11,72 +11,97 @@
    🌸 HERO SECTION
 ================================ */
 .hero {
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
-  background: linear-gradient(135deg, #fff0f3, #ffe3ec);
+  background: var(--bg-cream);
+  color: var(--primary-maroon);
 }
 
 .hero h1 {
-  color: #d6336c;
-  font-size: 2.2rem;
+  color: var(--primary-maroon);
+  font-size: 3rem;
   margin-bottom: 10px;
+  letter-spacing: 2px;
 }
 
 .hero p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 25px;
   max-width: 600px;
   margin-inline: auto;
+  font-weight: 300;
 }
 
 .hero-btn {
-  background: #d6336c;
-  color: white;
-  padding: 12px 26px;
-  border-radius: 25px;
+  background: var(--primary-maroon);
+  color: var(--secondary-gold);
+  padding: 14px 32px;
+  border-radius: 4px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   display: inline-block;
-  transition: transform 0.2s, background 0.2s;
+  transition: all 0.3s ease;
+  border: 1px solid var(--secondary-gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .hero-btn:hover {
-  transform: scale(1.05);
+  background: var(--secondary-gold);
+  color: var(--primary-maroon);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
 }
 
 /* ===============================
    ⭐ FEATURED SECTION
 ================================ */
 .featured {
-  padding: 40px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
 .featured h2 {
-  margin-bottom: 20px;
-  font-size: 1.6rem;
-  color: #333;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: var(--primary-maroon);
+  position: relative;
+  display: inline-block;
+}
+
+.featured h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--secondary-gold);
 }
 
 .view-all {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .view-all-btn {
   display: inline-block;
-  background: #ff4d6d;
-  color: white;
-  padding: 12px 26px;
-  border-radius: 30px;
+  background: transparent;
+  color: var(--primary-maroon);
+  padding: 12px 30px;
+  border: 1px solid var(--primary-maroon);
+  border-radius: 0;
   text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.2s, background 0.2s;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .view-all-btn:hover {
-  background: #e63b59;
-  transform: scale(1.05);
+  background: var(--primary-maroon);
+  color: var(--secondary-gold);
 }
 
 /* ===============================
@@ -86,67 +111,78 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 15px;
-  padding: 15px;
-  background: white;
-  font-size: 14px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  gap: 20px;
+  padding: 30px;
+  background: #fff;
+  font-size: 15px;
+  box-shadow: var(--shadow);
   flex-wrap: wrap;
+  border-top: 2px solid var(--secondary-gold);
+  border-bottom: 2px solid var(--secondary-gold);
 }
 
 .highlights div {
-  flex: 1 1 120px;
+  flex: 1 1 150px;
   text-align: center;
+  color: var(--primary-maroon);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* ===============================
    💝 BOUQUETS SECTION
 ================================ */
 .bouquets {
-  padding: 30px 20px;
+  padding: 50px 20px;
 }
 
 .bouquets h2 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #d6336c;
-  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: var(--primary-maroon);
+  font-size: 2rem;
 }
 
 /* ===============================
    📣 CTA
 ================================ */
 .cta {
-  background: #d6336c;
-  color: white;
+  background: var(--primary-maroon);
+  color: var(--secondary-gold);
   text-align: center;
-  padding: 40px 20px;
+  padding: 60px 20px;
+  border-top: 1px solid var(--secondary-gold);
 }
 
 .cta h2 {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
 }
 
 .cta p {
   max-width: 600px;
   margin-inline: auto;
+  color: var(--text-light);
+  opacity: 0.9;
 }
 
 .cta-btn {
-  background: white;
-  color: #d6336c;
-  padding: 10px 22px;
-  border-radius: 25px;
+  background: var(--secondary-gold);
+  color: var(--primary-maroon);
+  padding: 12px 28px;
+  border-radius: 4px;
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
-  margin-top: 15px;
-  transition: transform 0.2s;
+  margin-top: 25px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
 .cta-btn:hover {
-  transform: scale(1.05);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 /* ===============================
@@ -154,25 +190,26 @@
 ================================ */
 @media (max-width: 480px) {
   .hero {
-    padding: 40px 15px;
+    padding: 60px 15px;
   }
 
   .hero h1 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
 
   .hero p {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .featured h2,
   .bouquets h2,
   .cta h2 {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   .highlights {
-    font-size: 13px;
+    font-size: 14px;
+    padding: 20px;
   }
 }
 
@@ -181,7 +218,7 @@
 ================================ */
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.6rem;
   }
 }
 
@@ -190,16 +227,16 @@
 ================================ */
 @media (min-width: 1200px) {
   .hero {
-    padding: 80px 20px;
+    padding: 100px 20px;
   }
 
   .hero h1 {
-    font-size: 2.6rem;
+    font-size: 3.5rem;
   }
 
   .featured h2,
   .bouquets h2,
   .cta h2 {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
 }

@@ -3,16 +3,18 @@
 ================================ */
 .card {
   background: #ffffff;
-  border-radius: 18px;
+  border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
   position: relative;
+  border: 1px solid rgba(197, 160, 89, 0.15);
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  border-color: var(--secondary-gold);
 }
 
 /* ===============================
@@ -21,14 +23,20 @@
 .image-container {
   position: relative;
   width: 100%;
-  height: 240px;
+  height: 260px;
   overflow: hidden;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.1);
 }
 
 .image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.card:hover .image-container img {
+  transform: scale(1.1);
 }
 
 /* ===============================
@@ -37,54 +45,60 @@
 .fav-btn,
 .search-btn {
   position: absolute;
-  background: rgba(255, 255, 255, 0.95);
-  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(197, 160, 89, 0.3);
   border-radius: 50%;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s, background 0.2s;
+  transition: all 0.2s ease;
+  color: var(--primary-maroon);
 }
 
 .fav-btn {
-  top: 12px;
-  right: 12px;
+  top: 15px;
+  right: 15px;
 }
 
 .search-btn {
-  bottom: 12px;
-  right: 12px;
+  bottom: 15px;
+  right: 15px;
 }
 
 .fav-btn:hover,
 .search-btn:hover {
   transform: scale(1.1);
-  background: #ffe6eb;
+  background: var(--secondary-gold);
+  color: white;
 }
 
 /* ===============================
    📄 Card Content
 ================================ */
 .card-content {
-  padding: 18px;
+  padding: 20px;
   text-align: center;
 }
 
 .card-content h3 {
   margin: 0;
-  font-size: 1.2rem;
-  color: #333;
+  font-size: 1.3rem;
+  color: var(--primary-maroon);
+  font-family: var(--heading-font);
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .price {
-  color: #ff4d6d;
-  font-weight: bold;
-  margin: 8px 0 15px;
-  font-size: 1.1rem;
+  color: var(--secondary-gold);
+  font-weight: 600;
+  margin: 10px 0 18px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
 }
 
 /* ===============================
@@ -93,24 +107,26 @@
 .button-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .btn-cart {
-  background: #ff4d6d;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 25px;
-  font-weight: bold;
+  background: var(--primary-maroon);
+  color: var(--secondary-gold);
+  border: 1px solid var(--secondary-gold);
+  padding: 14px;
+  border-radius: 0;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 0.95rem;
-  transition: transform 0.2s, background 0.2s;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 .btn-cart:hover {
-  background: #e63b59;
-  transform: scale(1.05);
+  background: var(--secondary-gold);
+  color: var(--primary-maroon);
 }
 
 /* ===============================
@@ -122,30 +138,38 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  padding: 15px;
+  padding: 20px;
+  backdrop-filter: blur(5px);
 }
 
 .image-overlay img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 90%;
+  max-height: 90%;
   object-fit: contain;
-  border-radius: 12px;
+  border-radius: 4px;
+  border: 2px solid var(--secondary-gold);
+  box-shadow: 0 0 50px rgba(0,0,0,0.5);
 }
 
 .close-image {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 25px;
+  right: 25px;
   background: none;
   border: none;
-  font-size: 26px;
+  font-size: 32px;
   cursor: pointer;
-  color: #ffffff;
+  color: var(--secondary-gold);
+  transition: transform 0.3s ease;
+}
+
+.close-image:hover {
+  transform: rotate(90deg);
 }
 
 /* ===============================
@@ -153,31 +177,31 @@
 ================================ */
 @media (max-width: 480px) {
   .image-container {
-    height: 180px;
+    height: 200px;
   }
 
   .card-content {
-    padding: 14px;
+    padding: 16px;
   }
 
   .card-content h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .price {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .fav-btn,
   .search-btn {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     font-size: 16px;
   }
 
   .btn-cart {
-    padding: 10px;
-    font-size: 0.9rem;
+    padding: 12px;
+    font-size: 0.85rem;
   }
 }
 
@@ -186,11 +210,11 @@
 ================================ */
 @media (max-width: 768px) {
   .image-container {
-    height: 210px;
+    height: 230px;
   }
 
   .card-content h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -199,14 +223,14 @@
 ================================ */
 @media (min-width: 1200px) {
   .image-container {
-    height: 260px;
+    height: 280px;
   }
 
   .card-content h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .price {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }

@@ -1,94 +1,356 @@
-/* Fixes the navbar to float at the bottom of the screen */
-.floating-nav-container {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
+/* =============================================
+   TANISHQ-INSPIRED LUXURY NAVBAR
+   Color Palette: Deep burgundy, warm gold, ivory
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500&family=Lato:wght@300;400&display=swap');
+
+/* CSS Variables */
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E4C97A;
+  --gold-dark: #A07830;
+  --gold-pale: #F5EDD6;
+  --burgundy: #6B1F2A;
+  --burgundy-deep: #4A1219;
+  --ivory: #FAF7F0;
+  --ivory-dark: #F0EAD8;
+  --charcoal: #2C2420;
+  --text-muted: #7A6A5A;
+  --strip-bg: #4A1219;
+  --navbar-height: 88px;
 }
 
-/* The dark pill shape */
-.pill-navbar {
+/* ─── TOP ANNOUNCEMENT STRIP ─── */
+.top-strip {
+  background: var(--strip-bg);
+  color: var(--gold-light);
+  text-align: center;
+  padding: 8px 16px;
+  font-family: 'Lato', sans-serif;
+  font-size: 11.5px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1001;
+}
+
+/* ─── MAIN NAVBAR ─── */
+.tanishq-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--ivory);
+  border-bottom: 1px solid var(--gold-pale);
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  background-color: #1a1a1a;
-  border-radius: 40px;
-  padding: 0 15px;
-  width: 360px;
-  max-width: 90vw;
-  height: 70px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  justify-content: space-between;
+  padding: 0 40px;
+  height: var(--navbar-height);
+  box-shadow: 0 2px 20px rgba(201, 168, 76, 0.08);
 }
 
-/* Default icon state */
-.nav-item {
-  position: relative;
+/* ─── BRAND AREA ─── */
+.brand-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.brand-logo {
+  text-decoration: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 100%;
-  color: #777777;
-  text-decoration: none;
+  gap: 2px;
+}
+
+.brand-name {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--burgundy-deep);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1;
   transition: color 0.3s ease;
 }
 
-.nav-item:hover {
-  color: #aaaaaa;
+.brand-logo:hover .brand-name {
+  color: var(--gold-dark);
 }
 
-/* Active icon state */
-.nav-item.active {
-  color: #ff3b3b;
-}
-
-/* 1. The flat red bar at the top of the active item */
-.nav-item.active::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 28px;
-  height: 4px;
-  background-color: #ff3b3b;
-  border-radius: 0 0 4px 4px;
-  box-shadow: 0 2px 8px rgba(255, 59, 59, 0.6);
-}
-
-/* 2. The glowing trapezoid spotlight effect */
-.nav-item.active::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 55px;
-  /* Fades from red at the top to transparent at the bottom */
-  background: linear-gradient(to bottom, rgba(255, 59, 59, 0.35) 0%, rgba(255, 59, 59, 0) 90%);
-  /* Cuts the rectangle into a spotlight cone shape */
-  clip-path: polygon(35% 0, 65% 0, 100% 100%, 0% 100%);
-  pointer-events: none; /* Prevents the glow from blocking clicks */
-}
-
-/* Cart and Favourites Badges */
-.badge {
-  position: absolute;
-  top: 14px;
-  right: 10px;
-  background-color: #ff3b3b;
-  color: #ffffff;
+.brand-tagline {
+  font-family: 'Cormorant Garamond', serif;
   font-size: 10px;
-  font-weight: bold;
-  border-radius: 50%;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* ─── ORNAMENTAL DIVIDERS ─── */
+.brand-ornament {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.6;
+}
+
+.ornament-line {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold));
+}
+
+.brand-ornament.right .ornament-line {
+  background: linear-gradient(to left, transparent, var(--gold));
+}
+
+.ornament-diamond {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* ─── NAV LINKS ─── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 2;
+  justify-content: center;
+}
+
+.nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  transition: color 0.3s ease;
+}
+
+.link-text {
+  position: relative;
+  z-index: 1;
+}
+
+.link-underline {
+  position: absolute;
+  bottom: 4px;
+  left: 18px;
+  right: 18px;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover {
+  color: var(--gold-dark);
+}
+
+.nav-link:hover .link-underline,
+.nav-link.active .link-underline {
+  transform: scaleX(1);
+}
+
+.nav-link.active {
+  color: var(--burgundy);
+}
+
+.nav-link.active .link-underline {
+  background: var(--burgundy);
+  height: 1.5px;
+}
+
+/* ─── NAV BADGE (inline) ─── */
+.nav-badge {
+  background: var(--burgundy);
+  color: var(--gold-light);
+  font-family: 'Lato', sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   width: 16px;
   height: 16px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #1a1a1a;
-  z-index: 2; /* Ensures badge stays above the spotlight */
+  line-height: 1;
+}
+
+/* ─── ACTION ICONS ─── */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.action-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: var(--charcoal);
+  text-decoration: none;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.action-btn:hover {
+  color: var(--gold-dark);
+  background: var(--gold-pale);
+}
+
+.action-btn.active {
+  color: var(--burgundy);
+}
+
+.action-icon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  transition: stroke 0.3s ease;
+}
+
+/* ─── ACTION BADGE ─── */
+.action-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: var(--gold);
+  color: var(--burgundy-deep);
+  font-family: 'Lato', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  min-width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2px;
+  border: 1.5px solid var(--ivory);
+  line-height: 1;
+}
+
+/* ─── DECORATIVE BOTTOM DIVIDER ─── */
+.navbar-divider {
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  background: var(--ivory);
+  height: 18px;
+  border-bottom: 1px solid var(--ivory-dark);
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-pale), var(--gold-light), var(--gold-pale), transparent);
+}
+
+.divider-motif {
+  color: var(--gold);
+  font-size: 7px;
+  padding: 0 10px;
+  letter-spacing: 4px;
+  opacity: 0.7;
+}
+
+/* ─── MOBILE RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .top-strip {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+
+  .tanishq-navbar {
+    padding: 0 16px;
+    height: 72px;
+    flex-wrap: nowrap;
+  }
+
+  .brand-area {
+    gap: 8px;
+    flex: 0 0 auto;
+  }
+
+  .brand-ornament {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: 17px;
+    letter-spacing: 0.12em;
+  }
+
+  .brand-tagline {
+    font-size: 8.5px;
+  }
+
+  /* Hide text nav links on mobile — use icon actions only */
+  .nav-links {
+    display: none;
+  }
+
+  .nav-actions {
+    gap: 2px;
+  }
+
+  .action-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .action-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .navbar-divider {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .tanishq-navbar {
+    padding: 0 24px;
+  }
+
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 10.5px;
+  }
+
+  .navbar-divider {
+    padding: 0 24px;
+  }
+
+  .brand-ornament .ornament-line {
+    width: 18px;
+  }
 }

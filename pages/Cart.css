@@ -2,21 +2,26 @@
    🛒 CART PAGE
 ================================ */
 .cart-page {
-  padding: 30px;
+  padding: 40px 20px;
   max-width: 1200px;
   margin: auto;
+  min-height: 80vh;
 }
 
 .cart-page h2 {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   text-align: center;
+  color: var(--primary-maroon);
+  font-size: 2.5rem;
 }
 
 /* Empty cart */
 .empty {
   text-align: center;
-  color: #777;
-  font-size: 1.1rem;
+  color: #666;
+  font-size: 1.2rem;
+  padding: 100px 20px;
+  font-style: italic;
 }
 
 /* ===============================
@@ -24,8 +29,8 @@
 ================================ */
 .cart-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 /* ===============================
@@ -33,15 +38,17 @@
 ================================ */
 .cart-card {
   background: white;
-  border-radius: 16px;
+  border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(197, 160, 89, 0.15);
 }
 
 .cart-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  border-color: var(--secondary-gold);
 }
 
 /* ===============================
@@ -49,9 +56,10 @@
 ================================ */
 .cart-image {
   width: 100%;
-  height: 220px;
+  height: 240px;
   overflow: hidden;
-  background: #f4f4f4;
+  background: #fdfdfd;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.1);
 }
 
 .cart-image img {
@@ -65,50 +73,63 @@
    ℹ️ INFO
 ================================ */
 .cart-info {
-  padding: 15px;
+  padding: 20px;
   text-align: center;
 }
 
 .cart-info h3 {
   margin: 0;
-  font-size: 1.1rem;
-  color: #333;
+  font-size: 1.2rem;
+  color: var(--primary-maroon);
+  font-family: var(--heading-font);
 }
 
 .price {
-  color: #ff4d6d;
-  font-weight: bold;
-  margin: 8px 0;
-  font-size: 1.05rem;
+  color: var(--secondary-gold);
+  font-weight: 600;
+  margin: 10px 0 15px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
 }
 
 /* ===============================
    ❌ REMOVE BUTTON
 ================================ */
 .btn-remove {
-  background: #eee;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 20px;
+  background: transparent;
+  color: #888;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 0;
   cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.2s;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .btn-remove:hover {
-  background: #ddd;
+  background: var(--primary-maroon);
+  color: white;
+  border-color: var(--primary-maroon);
 }
 
 /* ===============================
    📊 SUMMARY
 ================================ */
 .cart-summary {
-  margin-top: 40px;
+  margin-top: 60px;
+  padding: 40px;
+  background: white;
+  border-top: 3px solid var(--secondary-gold);
   text-align: center;
+  box-shadow: var(--shadow);
 }
 
 .cart-summary h3 {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  color: var(--primary-maroon);
+  font-size: 1.8rem;
 }
 
 /* ===============================
@@ -117,17 +138,20 @@
 .btn-order {
   background: #25d366;
   color: white;
-  padding: 14px 28px;
-  border-radius: 30px;
+  padding: 16px 36px;
+  border-radius: 4px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   display: inline-block;
-  transition: transform 0.2s, background 0.2s;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .btn-order:hover {
   background: #128c7e;
-  transform: scale(1.05);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
 }
 
 /* ===============================
@@ -135,29 +159,33 @@
 ================================ */
 @media (max-width: 480px) {
   .cart-page {
-    padding: 15px;
+    padding: 20px 15px;
+  }
+
+  .cart-page h2 {
+    font-size: 2rem;
   }
 
   .cart-image {
-    height: 180px;
+    height: 200px;
   }
 
   .cart-info h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .price {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .btn-remove {
-    padding: 8px 14px;
-    font-size: 0.85rem;
+    padding: 10px;
+    width: 100%;
   }
 
   .btn-order {
     width: 100%;
-    padding: 14px;
+    padding: 16px;
   }
 }
 
@@ -166,7 +194,7 @@
 ================================ */
 @media (max-width: 768px) {
   .cart-image {
-    height: 200px;
+    height: 220px;
   }
 }
 
@@ -175,14 +203,14 @@
 ================================ */
 @media (min-width: 1200px) {
   .cart-image {
-    height: 250px;
+    height: 280px;
   }
 
   .cart-info h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .price {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
   }
 }
